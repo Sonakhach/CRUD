@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+</head>
+<body>
+   <div class="container">
+   <div  style="margin-top: 100px">
+    <b >
+      Title
+    </b>
+    <p><%= page.content %></p><hr>
+    <b >
+      Description
+    </b>
+  
+    <p>
+    <%= page.description %>      
+    </p><hr>
+    <b>Content</b>
+      <p>
+      <%= page.content%> 
+    </p><hr>
+    <p>
+        <img src="/images/<%= page.imgname %>" class="flot-left" alt=" ">
+    </p>
+    
+ 
+  <a href="/admin" class=' glyphicon glyphicon-chevron-left'>Back</a> 
+    
+    </p>

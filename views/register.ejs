@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Sona</title>
+	  <meta charset="utf-8">
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+      
+
+	
+</head>
+<body>
+  <div class="container">
+  	<!-- <h2>Register</h2> -->
+    <% if(message){ %>
+    <h1 class="text-danger"> <%=message%>
+        <% } %>
+    <div class="row justify-content-md-center" style="margin-top: 100px">
+
+	
+	<form action="/auth/register" id="registerForm" method='post'>
+		<div class="form-group ">
+            <label>Name</label>
+            <input  class="form-control" type="text"  name="name"  placeholder="Name" required>
+            <span class="help-block"></span>
+        </div>
+		<div class="form-group ">
+            <label>Email</label>
+            <input type="text" name="email" class="form-control" placeholder="Email" required>
+            <span class="help-block"></span>
+        </div>    
+        <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" class="form-control" placeholder="Password" required>
+            <span class="help-block"></span>
+        </div>
+ 		
+ 		<div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Submit">
+            <input type="reset" class="btn btn-default" value="Reset">
+            <a href="/admin" class=' glyphicon glyphicon-chevron-left'>Back</a>
+        </div>
+        <p>Already have an account? <a href="/auth/login">Login here</a>.</p>
+
+ 	</form>
+ 
+ 
+</div>	
+</body>
+
+</html>

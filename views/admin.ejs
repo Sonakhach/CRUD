@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <style type="text/css">
+       
+        table tr td:last-child a{
+            margin-right: 15px;
+        }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();   
+        });
+    </script>
+</head>
+<body>
+  <nav class="navbar " >
+  <div class="container-fluid adminMenuView ">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Blog</a>
+      
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right adminMenuRow">
+      <li><a href="admin/logout"> <span class="glyphicon glyphicon-off"></span> Logout</a></li>
+      <li><a href="auth/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      
+    </ul>
+  </div>
+</nav>
+         <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="page-header clearfix">                    	
+                        <h2 class="pull-left text-danger">Articles Details</h2>
+                        <a href="/admin/adminCreateArticle" class="btn btn-primary pull-right">Add New Article</a>
+                    </div>
+               
+                           <table class='table table-bordered table-striped'>
+                               <thead>
+                                   <tr>
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Content</th>
+                                        <th>Imgname</th>
+                                        <td><b>Action</b></td>
+                                    </tr>
+                                 </thead>
+                                 <tbody>
+
+                                  <% for(let page of result){ %>
+                                      <tr>
+                                        <td><%= page['id'] %> </td>
+                                        <td><%= page['title'] %> </td>
+                                        <td><%= page['description'] %> </td>
+                                        <td><%= page['content'] %> </td>
+                                        <td><%= page['imgname'] %> </td>
+
+                                        <td>
+                                           <a href="/admin/article/<%=page['id'] %>" title='View Record' data-toggle='tooltip'><span class='glyphicon glyphicon-eye-open'></span></a>
+                                          <a href="/admin/adminUpdateArticle/<%=page['id'] %>" title='Update Record' data-toggle='tooltip'><span class='glyphicon glyphicon-pencil'></span></a>
+                                          <a href="/admin/articleDelete/id=<%=page['id'] %>" title='Delete Record' data-toggle='tooltip' class='delete' id="<%=page['id']%>"><span class='glyphicon glyphicon-trash'></span></a>
+                                          
+                                       </td>
+                                    </tr>
+
+
+
+                                 <% } %>
+                                     
+                             
+                               </tbody>                            
+            
+                </div>
+            </div>        
+        </div>
+    
+    <script type="text/javascript" src="/javascripts/adminAllArticles.js"></script>
+</body>
+
+
+</html>

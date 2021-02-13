@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sona</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<nav class="navbar ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Blog</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+
+      <li><a href="admin/logout"> <span class="glyphicon glyphicon-off"></span> Logout</a></li>
+      <li><a href="auth/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">  
+<form action="/admin/adminUpdateArticle" enctype="multipart/form-data" method="post">
+    <label>Title</label>
+    <input class="form-control" type="text" name="title" value="<%= page.title %>">
+    
+    <label>Description</label>
+    <input class="form-control" type="text" name="description" value="<%= page.description %>">
+    
+  
+    
+    <label>Content</label>
+      <textarea class="form-control" name="content" placeholder="text"   rows="5">
+        <%= page.content %>
+      </textarea>    
+    <p>
+        <img src="/images/<%= page.imgname %>" class="flot-left" alt=" ">
+    </p>
+    <p>
+       <input type="hidden" name="imgname" value="<%= page.imgname %>" >
+
+    </p>
+     <p>
+       <input type="hidden" name="id" value="<%= page.id %>">
+
+    </p>
+     <label>Upload file</label><input class='btn-primary' type="file" name="myImgFileName"></p>
+    <p>
+      <input class='btn-primary' type="submit" name="submit" value="Send">
+      <a href="/admin" class=' glyphicon glyphicon-chevron-left'> Back  </a>      
+    </p> 
+</form> 
+</div>
+
+</body>
+</html>

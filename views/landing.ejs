@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Sona</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+</head>
+<body>
+
+<nav class="navbar ">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Blog</a>
+    </div>
+    
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="auth/register"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li><a href="auth/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+  </div>
+</nav>
+  
+<div class="container">
+	 
+  <h3 class="text-center"  id = 'landingID'>This is login register sistem with CRUD </h3>
+  <div class="container-fluid">
+
+<% for(let page of pages){ %>
+    <div id='div'>
+      <h1 class="text-center">
+        <%= page['title'] %> 
+
+        </h1>
+        <p class="text-center">
+          <%= page['description'] %> 
+        </p>
+    </div>
+    <div id='div'>
+      <p >
+      <img src="images/<%= page['imgname'] %>" class="img-fluid" style="max-width:500px !important">
+
+        
+    </p>
+    <p class="text-center" >
+    <%=page['content'] %> 
+    </p>
+    </div>
+    
+
+  <% } %>
+
+</div>
+</div>
+
+</body>
+</html>
+
+
+

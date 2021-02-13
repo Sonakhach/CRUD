@@ -1,0 +1,25 @@
+body {
+  /*padding: 50px;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  /*color: #00B7FF;*/
+}
+.adminMenuRow{
+	flex-direction: row !important; 
+}
+.adminMenuView{
+	display: block !important;
+}
+
+#landingID:hover{
+	font-size: 40px !important;
+	background:red !important;
+	width: 100% !important;
+
+}
+#div {
+	float: left !important;
+	width: 50%!important;
+}

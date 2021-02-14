@@ -1,11 +1,9 @@
 body {
-  /*padding: 50px;*/
+  
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  /*color: #00B7FF;*/
-}
+
 .adminMenuRow{
 	flex-direction: row !important; 
 }
@@ -14,12 +12,18 @@ a {
 }
 
 #landingID:hover{
-	font-size: 40px !important;
-	background:red !important;
-	width: 100% !important;
-
+	cursor: pointer;
+	 font-size: 36px;
 }
 #div {
 	float: left !important;
 	width: 50%!important;
+	border-style: ridge;
+}
+#landingID {
+	border-style: ridge;
+  font-size: 14px;
+  transition-property: font-size;
+  transition-duration: 2s;
+  transition-delay: 1s;
 }

@@ -64,9 +64,7 @@ class AuthController{
               });      
       
                 res.cookie("x-access-token", token).status(200)
-                // res.cookie('rememberme', '1', { maxAge: 900000, httpOnly: true }) maxAge
-                // res.cookie("x-access-token", token, { maxAge: 30*24*60*60*1000, httpOnly: true }).status(200)
-              
+               
             	res.redirect('/admin');
                  
 
@@ -85,18 +83,32 @@ class AuthController{
 
 verifyToken = (req, res, next) => {
   let token = req.headers["x-access-token"] || req.cookies["x-access-token"];
+ console.log("tok",token)
   if (!token) {
-    return res.status(403).send({ message: "No token provided!" });
+    return  res.redirect("/auth/login");
   }
   jwt.verify(token, config.secret, (err, decoded) => {
     if (err) {
-      return res.status(401).send({ message: "Unauthorized!" });
+      return res.redirect("/auth/login");
     }
     req.userId = decoded.id;
     next();
   });
 };
 
+verifyLogin = (req, res, next) => {
+    let token = req.headers["x-access-token"] || req.cookies["x-access-token"];
+   console.log("tok",token)
+    if (!token) {
+      return  next();
+    }
+    jwt.verify(token, config.secret, (err, decoded) => {
+      if (err) {
+        return  next();
+      }
+      return res.redirect("/admin");
+    });
+  };
 
 
 }

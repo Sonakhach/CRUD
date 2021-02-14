@@ -2,6 +2,7 @@ const mongoose = require ('mongoose');
 var express =require('express');
 var path = require('path');
 var createError = require('http-errors');
+const { verifyToken} = require('./controllers/authController.js');
 
 var bodyParser =require('body-parser');
 var cookieParser = require('cookie-parser');
@@ -37,7 +38,7 @@ const adminRoutes = require('./routes/adminRoutes.js');
 
 
 app.use('/', indexRoutes);
-app.use('/admin', adminRoutes);
+app.use('/admin', verifyToken, adminRoutes);
 app.use('/auth',urlencodedparser, authRoutes);
 
 

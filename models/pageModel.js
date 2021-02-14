@@ -1,5 +1,5 @@
 const mongoose = require ('mongoose');
-
+//schema for articles
 const pageSchema = new mongoose.Schema({
 
    title: { 

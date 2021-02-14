@@ -5,7 +5,7 @@ class indexController{
 	getLandingPage(req,res){
 		res.render('landing')
 	}
-
+// appears on landing page
 	 getAllArticles(req,res){      
       Page.find().sort({}).then((pages)=>{
        console.log(pages)

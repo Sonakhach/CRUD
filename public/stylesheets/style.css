@@ -21,7 +21,7 @@ body {
 	border-style: ridge;
 }
 #landingID {
-	border-style: ridge;
+	/*border-style: ridge;*/
   font-size: 14px;
   transition-property: font-size;
   transition-duration: 2s;

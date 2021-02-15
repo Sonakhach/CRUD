@@ -20,8 +20,7 @@ body {
 	width: 50%!important;
 	border-style: ridge;
 }
-#landingID {
-	/*border-style: ridge;*/
+#landingID {	
   font-size: 14px;
   transition-property: font-size;
   transition-duration: 2s;
